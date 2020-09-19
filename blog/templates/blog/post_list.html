@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Rvbcia</title>
+    <title>Rvbcia's blog</title>
 </head>
 <body>
     <div><a href="/"> Blog from Django Girls tutorial </a> </div>
-    <div>
-        <p>Published: 19/09/2020</p>
-        <h2>My first post</h2>
-        <p>Lorem ipsum</p>
-    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href=""> {{ post.title }}</a> </h2>
+            <p> {{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
